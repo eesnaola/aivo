@@ -1,0 +1,16 @@
+# Learn more about services, parameters and containers at
+# https://symfony.com/doc/current/service_container.html
+parameters:
+    #parameter_name: value
+
+services:
+    #service_name:
+    #    class: AppBundle\Directory\ClassName
+    #    arguments: ['@another_service_name', 'plain_value', '%parameter_name%']
+
+    facebook_service:
+        class: AppBundle\DependencyInjection\FacebookService
+        arguments: ["%facebook_token%", "@monolog.logger"]
+
+    user_util:
+        class: AppBundle\Utils\UserUtil
